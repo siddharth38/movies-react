@@ -7,6 +7,7 @@ import Movie from './pages/movieDetail/movie';
 import MovieList from './Components/Movielist/Movielist';
 import Login from './pages/login';
 import Signin from './pages/signin'
+import PrivateRoutes from './pages/privateroutes';
 function App() {
   return (
     <div className="App">
@@ -14,11 +15,16 @@ function App() {
           <Header />
             <Routes>
                 <Route index element={<Home/>}></Route>
+                <Route element={<PrivateRoutes />}>
+                <Route path="movie/:id" element={<Movie />}></Route>
+                <Route path="movies/:type" element={<MovieList />}></Route>
+                
+                </Route>
                 <Route path="movie/:id" element={<Movie />}></Route>
                 <Route path="movies/:type" element={<MovieList />}></Route>
                 <Route path="/login"  element={<Login/>}></Route>
                 <Route path="/signin"  element={<Signin/>}></Route>
-                <Route path="/*" element={<h1>Error Page</h1>}></Route>
+                <Route path="/*" element={<Home/>}></Route>
             </Routes>
         </Router>
 

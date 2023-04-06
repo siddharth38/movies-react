@@ -4,6 +4,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import { Link } from "react-router-dom";
 import MovieList from "../../Components/Movielist/Movielist";
+import Header from "../../Components/header/Header";
 const Home = () => {
 
     const [ popularMovies, setPopularMovies ] = useState([])
@@ -16,11 +17,12 @@ const Home = () => {
 
     return (
         <>
+       
             <div className="poster">
                 <Carousel
                     showThumbs={true}
                     autoPlay={true}
-                    transitionTime={2}
+                    transitionTime={1}
                     infiniteLoop={true}
                     showStatus={false}
                 >
@@ -36,10 +38,10 @@ const Home = () => {
                                         {movie ? movie.release_date : ""}
                                         <span className="posterImage__rating">
                                             {movie ? movie.vote_average :""}
-                                            <i className="fas fa-star" />{" "}
+                                            <i className="fa fa-star checked"   style={{color: "yellow"}}/>{""}
                                         </span>
                                     </div>
-                                    <div className="posterImage__description">{movie ? movie.overview : ""}</div>
+                                    <div className="posterImage__description">{movie ? movie.overview:""}</div>
                                 </div>
                             </Link>
                         ))

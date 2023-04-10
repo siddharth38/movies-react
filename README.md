@@ -1,1 +1,1 @@
-     Git hub link  --->>https://siddharth38.github.io/movies-react/
+   github link -->> https://siddharth38.github.io/movies-react/
